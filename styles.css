@@ -1,0 +1,643 @@
+/* Variables de colores llamativos y elegantes */
+:root {
+    --color-fondo: #f4f6f9; /* Un gris-azulado muy sutil para resaltar las tarjetas blancas */
+    --color-primario: #0A1931; /* Azul Zafiro muy profundo para botones y fondos */
+    --color-secundario: #D4AF37; /* Tu dorado vibrante */
+    --color-dorado: #D4AF37;
+    --color-texto: #333333; /* Gris oscuro para el texto de lectura */
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* Navegación */
+header {
+    background-color: var(--blanco);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-secundario);
+}
+
+.header-logo {
+    max-height: 90px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 5px 0px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-dorado);
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-dorado);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Secciones Principales */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 5%;
+}
+
+section {
+    margin-bottom: 60px;
+    scroll-margin-top: 100px; /* Para que el menú pegajoso no tape el título */
+}
+
+h2 {
+    text-align: center;
+    color: var(--color-primario);
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Collage de Productos (Grid Responsivo) */
+.collage {
+    display: grid;
+    /* Esto hace la magia del responsive: se adapta a pantallas grandes y pequeñas automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-producto {
+    background-color: var(--blanco);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+}
+
+.pie-tarjeta {
+    /* Esta es la magia: empuja este contenedor hacia el fondo pase lo que pase */
+    margin-top: auto; 
+    padding-top: 15px; /* Un pequeño espacio para separarlo de los detalles */
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.tarjeta-producto h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta-producto p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.codigo, .precio {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 1.4rem;
+    color: var(--color-secundario);
+}
+
+button {
+    background-color: var(--color-primario); /* Fondo Azul Zafiro */
+    color: var(--blanco);
+    border: 1px solid var(--color-primario);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-dorado); /* Cambia a Dorado */
+    color: var(--color-primario); /* Texto en azul para hacer contraste */
+    border: 1px solid var(--color-dorado);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4); /* Brillo dorado alrededor */
+}
+
+/* Formulario de Contacto */
+#contacto {
+    background-color: var(--blanco);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+#contacto p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#formulario-whatsapp {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.grupo-form {
+    margin-bottom: 15px;
+}
+
+.grupo-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.grupo-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: var(--color-fondo);
+}
+
+.btn-whatsapp {
+    background-color: #25D366; 
+    color: var(--blanco);
+    border: none;
+    margin-top: 10px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe57;
+    color: var(--blanco);
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4); /* Brillo verde */
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px; /* Un poco más de espacio para respirar */
+    background-color: var(--color-primario); /* Fondo Azul Zafiro */
+    color: var(--blanco); /* Texto en blanco para resaltar */
+    margin-top: 60px;
+    border-top: 3px solid var(--color-dorado); /* Línea dorada superior que combina con el logo */
+}
+
+footer p {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+/* Adaptabilidad para Teléfonos */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Estilos para el Carrito de Compras */
+#contenedor-carrito {
+    background-color: var(--color-fondo);
+    border: 1px dashed var(--color-primario);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#contenedor-carrito h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--color-secundario);
+}
+
+#lista-carrito {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+#lista-carrito li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+#lista-carrito li:last-child {
+    border-bottom: none;
+}
+
+.btn-eliminar {
+    background-color: transparent;
+    color: #ff4d4d;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    width: auto;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.btn-eliminar:hover {
+    background-color: transparent;
+    transform: scale(1.2);
+}
+
+.total-carrito {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px dashed var(--color-secundario);
+    text-align: right;
+    font-size: 1.2rem;
+    color: var(--color-texto);
+}
+
+#monto-total {
+    font-weight: bold;
+    color: var(--color-dorado); /* Usamos tu color dorado */
+    font-size: 1.4rem;
+}
+
+/* --- Sección de Redes Sociales --- */
+#redes-sociales {
+    text-align: center;
+    background-color: var(--blanco);
+    padding: 50px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    margin-bottom: 60px;
+}
+
+#redes-sociales p {
+    color: var(--color-texto);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.contenedor-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icono-red {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Hace que sean círculos perfectos */
+    background-color: var(--color-primario); /* Fondo Azul Zafiro */
+    color: var(--color-dorado); /* Icono Dorado */
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Animación al pasar el ratón */
+.icono-red:hover {
+    background-color: var(--color-dorado); /* El fondo cambia a Dorado */
+    color: var(--color-primario); /* El icono cambia a Azul Zafiro */
+    transform: translateY(-8px); /* Efecto de flotar hacia arriba */
+    box-shadow: 0 8px 15px rgba(212, 175, 55, 0.4); /* Resplandor dorado debajo */
+}
+
+.hero {
+    /* Aquí colocamos un gradiente oscuro (azul zafiro semi-transparente) sobre la imagen de fondo */
+    background-image: linear-gradient(rgba(10, 25, 49, 0.75), rgba(10, 25, 49, 0.75)), url('./img/skmei-portada.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Este truco hace que la imagen se quede quieta al bajar (Efecto Parallax) */
+    
+    /* Tamaño de la portada */
+    height: 70vh; /* Ocupa el 70% de la pantalla del usuario */
+    min-height: 400px;
+    
+    /* Centrado del contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Espaciado inferior para separarlo del catálogo */
+    margin-bottom: 60px;
+}
+
+.hero-contenido {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-contenido h1 {
+    color: var(--color-dorado); /* Título en dorado brillante */
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para que resalte más */
+}
+
+.hero-contenido p {
+    color: var(--blanco);
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+
+/* Botón especial para la portada */
+.btn-hero {
+    display: inline-block;
+    background-color: var(--color-dorado);
+    color: var(--color-primario);
+    padding: 15px 35px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px; /* Bordes redondeados elegantes */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--color-dorado);
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: transparent; /* Se vuelve transparente */
+    color: var(--color-dorado); /* Letras doradas */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); /* Resplandor dorado */
+}
+
+/* Ajustes para Teléfonos Móviles */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh; /* En móviles lo hacemos un poco más bajo */
+        background-attachment: scroll; /* Desactivamos el parallax en móviles por rendimiento */
+    }
+    
+    .hero-contenido h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-contenido p {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- Estilos para la Galería de Productos --- */
+.galeria-producto {
+    margin-bottom: 15px;
+}
+
+.img-principal {
+    width: 100%;
+    height: 280px; /* Mantiene el marco fijo para que la tarjeta jamás se mueva */
+    object-fit: contain; /* Muestra la foto completa en su tamaño original dentro de este marco */
+    background-color: var(--blanco); /* Fondo blanco por si la foto es más angosta */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.miniaturas {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Separación entre las miniaturas */
+}
+
+.miniatura {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre la miniatura */
+.miniatura:hover {
+    border: 2px solid var(--color-dorado);
+    transform: translateY(-2px);
+}
+
+/* --- Estilos para los Detalles del Producto --- */
+.detalles-producto {
+    background-color: var(--color-fondo); /* Un fondo gris claro para diferenciarlo */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: left; /* Alineamos a la izquierda para mejor lectura */
+    border-left: 3px solid var(--color-dorado); /* Una línea dorada decorativa a un lado */
+}
+
+.detalles-producto ul {
+    list-style-type: none; /* Quitamos los puntos negros por defecto */
+}
+
+.detalles-producto li {
+    font-size: 0.85rem;
+    color: var(--color-texto);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.detalles-producto li:last-child {
+    margin-bottom: 0;
+}
+
+.detalles-producto li b {
+    color: var(--color-primario); /* Los títulos (Material, Tamaño) van en Azul Zafiro */
+    font-weight: 600;
+}
+
+/* --- Nota de Tasa BCV --- */
+.nota-bcv {
+    font-size: 0.85rem;
+    color: #777777; /* Un gris suave y discreto */
+    font-style: italic;
+    margin-top: 10px;
+    text-align: right; /* Alineado a la derecha igual que el total */
+    letter-spacing: 0.5px;
+}
+
+/* --- Estilos a prueba de fallos para Bisutería --- */
+.tarjeta-producto img.img-bisuteria {
+    width: 100% !important;
+    height: 280px !important; /* Le damos la misma altura exacta que a los relojes */
+    object-fit: contain !important; /* El !important OBLIGA al navegador a mostrar la foto completa sin recortar */
+    background-color: #fafafa !important; /* Fondo claro para rellenar los espacios vacíos */
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 10px;
+}
+
+/* =========================================
+   ESTILOS PARA LOS ARTÍCULOS DEL CARRITO 
+   ========================================= */
+
+/* Quitamos los puntos de la lista y ordenamos la fila */
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0; /* Una línea divisoria sutil */
+}
+
+/* Columna 1: Nombre y precio unitario */
+.info-item {
+    display: flex;
+    flex-direction: column;
+    width: 45%; /* Ocupa casi la mitad del espacio */
+}
+
+.nombre-item {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333333;
+    margin-bottom: 3px;
+}
+
+.precio-item {
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+/* =========================================
+   ESTILOS PARA LOS BOTONES DE CANTIDAD 
+   ========================================= */
+
+/* Columna 2: El contenedor de los botones (Diseño tipo píldora) */
+.controles-cantidad {
+    display: flex;
+    align-items: center;
+    background-color: #f1f5f9; /* Un fondo gris azulado muy moderno */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 3px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Los botones de + y - */
+.btn-cantidad {
+    background-color: transparent;
+    border: none;
+    color: #0f172a; /* Color oscuro para que resalte */
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Hace que el hover sea un círculo perfecto */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efecto al pasar el ratón por encima de los botones */
+.btn-cantidad:hover {
+    background-color: #cbd5e1;
+}
+
+/* Efecto al hacer clic en los botones */
+.btn-cantidad:active {
+    transform: scale(0.9);
+}
+
+/* El número de la cantidad en el centro */
+.numero-cantidad {
+    font-weight: bold;
+    font-size: 1rem;
+    width: 25px; /* Ancho fijo para que los botones no salten si el número es de dos dígitos */
+    text-align: center;
+    color: #0f172a;
+}
+
+/* =========================================
+   ESTILOS PARA EL SUBTOTAL Y ELIMINAR
+   ========================================= */
+
+/* Columna 3: El total de ese artículo y el botón X */
+.subtotal-item {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end; /* Alinea el precio a la derecha */
+    align-items: center;
+    font-size: 1rem;
+    color: #0f172a;
+}
