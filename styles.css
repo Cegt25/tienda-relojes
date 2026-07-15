@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 /* Variables de colores llamativos y elegantes */
 :root {
     --color-fondo: #f4f6f9; /* Un gris-azulado muy sutil para resaltar las tarjetas blancas */
@@ -399,6 +401,9 @@ footer p {
 }
 
 .hero-contenido h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 4px;
     color: var(--color-dorado); /* Título en dorado brillante */
     font-size: 3.5rem;
     text-transform: uppercase;
