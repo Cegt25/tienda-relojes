@@ -148,7 +148,6 @@ h2 {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 15px;
-    object-fit: cover;
 }
 
 .tarjeta-producto h3 {
@@ -474,13 +473,18 @@ footer p {
 
 .miniaturas {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px; /* Separación entre las miniaturas */
+    gap: 8px; /* Separación entre las miniaturas */
+    width: 100%; /* Ocupa el ancho total disponible */
+    box-sizing: border-box;
+    margin-top: 10px;
 }
 
 .miniatura {
-    width: 60px;
-    height: 60px;
+    width: 65px !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto;
     object-fit: cover;
     border-radius: 6px;
     cursor: pointer;
