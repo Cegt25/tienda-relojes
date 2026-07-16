@@ -105,7 +105,7 @@ document.getElementById('formulario-whatsapp').addEventListener('submit', functi
     }
 
     const nombre = document.getElementById('nombre').value;
-    const numeroWhatsApp = "1234567890"; // <- RECUERDA COLOCAR TU NÚMERO AQUÍ
+    const numeroWhatsApp = "584248520055"; // <- Número de WhatsApp fijo para recibir pedidos
 
     let mensaje = `¡Hola! Soy ${nombre}. Quiero realizar el siguiente pedido:%0A%0A`;
     let totalPagar = 0;

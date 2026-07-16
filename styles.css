@@ -646,3 +646,58 @@ footer p {
     font-size: 1rem;
     color: #0f172a;
 }
+
+/* =========================================
+   CARRITO LATERAL FIJO (SOLO PARA PC Y TABLETS)
+   ========================================= */
+@media (min-width: 900px) {
+    /* 1. Hacemos espacio a la derecha para que el carrito no tape los productos */
+    body {
+        padding-right: 350px; 
+    }
+
+    /* 2. Convertimos la sección del carrito en un panel fijo */
+    #contacto {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 350px; /* Ancho del carrito */
+        height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+        background-color: #ffffff;
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.05); /* Sombra elegante a la izquierda */
+        padding: 20px;
+        overflow-y: auto; /* Si agregan muchos productos, se puede hacer scroll dentro del carrito */
+        z-index: 1000; /* Lo mantiene siempre por encima de otros elementos */
+        border-left: 1px solid #e2e8f0;
+    }
+
+    /* 3. Ajustes estéticos para que se vea ordenado en ese espacio angosto */
+    #contacto h2 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   REAJUSTE DE BOTONES PARA EL CARRITO LATERAL
+   ========================================= */
+
+#contacto .item-carrito {
+    flex-wrap: wrap; /* Permite que los elementos pasen a una segunda línea si no caben */
+    align-items: center;
+}
+
+#contacto .info-item {
+    width: 100%; /* Obliga al nombre del producto a ocupar toda la parte superior */
+    margin-bottom: 12px; /* Da un respiro antes de los botones */
+}
+
+#contacto .controles-cantidad {
+    width: auto; /* Mantiene el tamaño compacto de tu píldora */
+}
+
+#contacto .subtotal-item {
+    width: auto; /* Anula el 30% que tenía antes */
+    margin-left: auto; /* Empuja el precio total y la 'X' hacia la derecha */
+}
